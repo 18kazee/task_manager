@@ -1,0 +1,21 @@
+<div class="container mx-auto px-4 py-8">
+  <div id="notice">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block"><%= notice %></p>
+    <% end %>
+  </div>
+
+   <%= turbo_stream_from "tasks" %>
+
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-3xl font-bold">Tasks</h1>
+  </div>
+
+  <div class="mb-8" id="task_form">
+    <%= render "form", task: @task %>
+  </div>
+
+  <div id="tasks" class="space-y-4">
+    <%= render @tasks %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+current directory: /Users/nagasawakazuki/workspace/task_manager/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/nagasawakazuki/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/nagasawakazuki/workspace/task_manager/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241022-89501-fe65wa sitelibdir\=./.gem.20241022-89501-fe65wa clean
+
+current directory: /Users/nagasawakazuki/workspace/task_manager/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241022-89501-fe65wa sitelibdir\=./.gem.20241022-89501-fe65wa
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/nagasawakazuki/workspace/task_manager/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241022-89501-fe65wa sitelibdir\=./.gem.20241022-89501-fe65wa install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20241022-89501-fe65wa/racc
+
+current directory: /Users/nagasawakazuki/workspace/task_manager/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241022-89501-fe65wa sitelibdir\=./.gem.20241022-89501-fe65wa clean

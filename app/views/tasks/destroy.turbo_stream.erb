@@ -1,0 +1,2 @@
+<%= turbo_stream.remove @task %>
+<%= turbo_stream.update "notice", partial: "shared/flash", locals: { notice: "Task was successfully destroyed." } %>

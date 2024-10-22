@@ -1,0 +1,26 @@
+<%= form_with(model: task, class: "space-y-4") do |form| %>
+  <div>
+    <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :title, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    <% if task.errors.has_key?(:title) %>
+      <p class="mt-1 text-sm text-red-600"><%= task.errors.full_messages_for(:title).first %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :description, rows: 4, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    <% if task.errors.has_key?(:description) %>
+      <p class="mt-1 text-sm text-red-600"><%= task.errors.full_messages_for(:description).first %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :status, Task.statuses.keys.map { |s| [s.titleize, s] }, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "rounded-md bg-indigo-600 py-2 px-4 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+  </div>
+<% end %>
