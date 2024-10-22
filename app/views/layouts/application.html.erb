@@ -6,13 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-28 px-5">
+      <% if notice %>
+        <p class="notice bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4"><%= alert %></p>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <div class="flex justify-between items-center p-4 mb-4 bg-white shadow rounded-lg">
+          <span>Welcome <%= current_user.email %></span>
+          <%= button_to 'Sign out', 
+              destroy_user_session_path, 
+              method: :delete, 
+              class: 'px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700' %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </main>
   </body>

@@ -3,8 +3,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
-    @tasks = Task.all
-    @task = Task.new
+    @tasks = current_user.tasks.all
+    @task = current_user.tasks.new
   end
 
   def show
@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
 
     if @task.save
       respond_to do |format|
